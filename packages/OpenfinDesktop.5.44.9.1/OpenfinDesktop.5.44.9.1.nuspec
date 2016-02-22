@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>OpenfinDesktop</id>
+    <version>5.44.9.1</version>
+    <title>OpenFinDesktop</title>
+    <authors>OpenFin Inc</authors>
+    <owners>OpenFin Inc</owners>
+    <licenseUrl>https://openfin.co/terms/</licenseUrl>
+    <projectUrl>http://www.openfin.co/</projectUrl>
+    <iconUrl>https://openfin.co/wp-content/uploads/2015/02/favicon-copy.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>OpenFin Desktop Runtime .Net Adapter</description>
+    <releaseNotes>* Fixed bug where Named Pipes Port Discovery could be executed on the UI Thread.
+* Improved performance while connecting to the OpenFin Runtime.
+* Fixed bug where reconnecting to a forcibly closed runtime.
+
+You can explore these changes on the 5.44.9.1 Docs:
+
+* [OpenFin.Desktop](http://cdn.openfin.co/docs/csharp/latest/OpenfinDesktop/html/da614388-8773-5615-82de-769d6f1ea51c.htm)
+* [OpenFin.WinForm](http://cdn.openfin.co/docs/csharp/latest/OpenFin.WinForm/)
+* [OpenFin.WPF](http://cdn.openfin.co/docs/csharp/latest/OpenFin.WPF)</releaseNotes>
+    <copyright>Copyright 2015</copyright>
+    <tags>OpenFin FinTech</tags>
+    <dependencies>
+      <dependency id="DotNetZip" version="1.9.1.8" />
+      <dependency id="Newtonsoft.Json" version="6.0.8" />
+      <dependency id="WebSocket4Net" version="0.12.0" />
+    </dependencies>
+  </metadata>
+</package>

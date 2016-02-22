@@ -1,0 +1,250 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Openfin.WinForm</name>
+    </assembly>
+    <members>
+        <member name="T:Openfin.WinForm.NamespaceDoc">
+            <summary>
+            OpenFin WinForm Embedded View and Utilities.
+            </summary>
+        </member>
+        <member name="T:Openfin.WinForm.EmbeddedView">
+            <summary>
+            The WinForms Embedded View Control allows you to embed a OpenFin Web view within a Windows Forms application.
+            </summary>
+        </member>
+        <member name="P:Openfin.WinForm.EmbeddedView.OpenfinWindow">
+            <summary>
+            The OpenFin Window embedded as part of this control.
+            </summary>
+        </member>
+        <member name="P:Openfin.WinForm.EmbeddedView.OpenfinApplication">
+            <summary>
+            The OpenFin Application that owns the OpenFin Window embedded as part of this control.
+            </summary>
+        </member>
+        <member name="P:Openfin.WinForm.EmbeddedView.OpenfinRuntime">
+            <summary>
+            The OpenFin Runtime Instance. 
+            </summary>
+        </member>
+        <member name="P:Openfin.WinForm.EmbeddedView.IsReady">
+            <summary>
+            Is The Embedded View ready
+            </summary>
+        </member>
+        <member name="P:Openfin.WinForm.EmbeddedView.OnReady">
+            <summary>
+            Event will be raised when the OpenFin Window has loaded the content and has rendered.
+            </summary>
+        </member>
+        <member name="P:Openfin.WinForm.EmbeddedView.OnForcedClosed">
+            <summary>
+            Event will be raised when the OpenFin Window has been closed by means other than the Close method (WM_DESTROY for example)
+            </summary>
+        </member>
+        <member name="P:Openfin.WinForm.EmbeddedView.OnNavigationRejected">
+            <summary>
+            Event will be raised if content navigation rules have determined that the requested URL is not valid.
+            </summary>
+        </member>
+        <member name="P:Openfin.WinForm.EmbeddedView.AutoScale">
+            <summary>
+            Controls if the Embedded View resizes with its parent container
+            </summary>
+        </member>
+        <member name="M:Openfin.WinForm.EmbeddedView.#ctor">
+            <summary>
+            A New EmbeddedView Control
+            </summary>
+        </member>
+        <member name="M:Openfin.WinForm.EmbeddedView.Initialize(Openfin.Desktop.RuntimeOptions,Openfin.Desktop.ApplicationOptions)">
+            <summary>
+            Provide the application options, this will create an OpenFin application and use the Main Window as the Embedded View.
+            </summary>
+            <param name="runtimeOptions">Runtime Options being used</param>
+            <param name="appOptions">Application options for the new OpenFin Application to be created</param>
+        </member>
+        <member name="M:Openfin.WinForm.EmbeddedView.Initialize(Openfin.Desktop.RuntimeOptions,Openfin.Desktop.Application,Openfin.Desktop.WindowOptions)">
+            <summary>
+            Provide the application instance and WindowOptions, this will create an OpenFin Window in a per application shared GPU process
+            </summary>
+            <param name="runtimeOptions">Runtime Options being used</param>
+            <param name="application">OpenFin Application that will share the GPU Process with this window.</param>
+            <param name="windowOptions">Window Options for the new OpenFin Window to be created</param>
+        </member>
+        <member name="M:Openfin.WinForm.EmbeddedView.Initialize(Openfin.Desktop.RuntimeOptions,Openfin.Desktop.Window)">
+            <summary>
+            Provide the OpenFin Window object, this will embed the existing Window.
+            </summary>
+            <param name="runtimeOptions">Runtime Options being used</param>
+            <param name="window">Window object to be embedded</param>
+        </member>
+        <member name="M:Openfin.WinForm.EmbeddedView.Close">
+            <summary>
+            Closes the Embedded View
+            </summary>
+        </member>
+        <member name="M:Openfin.WinForm.EmbeddedView.CreateApplication(Openfin.Desktop.Runtime,Openfin.Desktop.ApplicationOptions)">
+            <summary>
+            Create a OpenFin application tuned for embedding windows.
+            </summary>
+            <param name="runtime">current OpenFin Runtime</param>
+            <param name="appOptions">Application Options</param>
+            <returns></returns>
+        </member>
+        <member name="M:Openfin.WinForm.EmbeddedView.Embed">
+            <summary>
+            Embed the OpenFin Window to the current control
+            </summary>
+        </member>
+        <member name="M:Openfin.WinForm.EmbeddedView.FindTopParentForm(System.Windows.Forms.Control)">
+            <summary>
+            Find the Top Parent given a control
+            </summary>
+            <param name="context">The control context</param>
+            <returns></returns>
+        </member>
+        <member name="M:Openfin.WinForm.EmbeddedView.ProcessForceClosed">
+            <summary>
+            Take action to clean resources in the event that the host controler was force closed 
+            </summary>
+        </member>
+        <member name="M:Openfin.WinForm.EmbeddedView.SetEventHandlers">
+            <summary>
+            Adds the standard event handlers 
+            </summary>
+        </member>
+        <member name="M:Openfin.WinForm.EmbeddedView.RemoveEventHandlers">
+            <summary>
+            removes the standard event handlers
+            </summary>
+        </member>
+        <member name="M:Openfin.WinForm.EmbeddedView.SetFormEventHandlers(System.Windows.Forms.Form)">
+            <summary>
+            Sets event handlers for form events
+            </summary>
+            <param name="form">given form to subscribe to events to</param>
+        </member>
+        <member name="M:Openfin.WinForm.EmbeddedView.RemoveParentFormEventHandlers(System.Windows.Forms.Form)">
+            <summary>
+            Removes event handlers for form events
+            </summary>
+            <param name="form"></param>
+        </member>
+        <member name="M:Openfin.WinForm.EmbeddedView.ResizeTo(System.Drawing.Size)">
+            <summary>
+            Resize the Embedded Window to a given size
+            </summary>
+            <param name="size"></param>
+        </member>
+        <member name="M:Openfin.WinForm.EmbeddedView.StartwindowConnectedPoll">
+            <summary>
+            Will create a poll 
+            </summary>
+        </member>
+        <member name="M:Openfin.WinForm.EmbeddedView.Reset">
+            <summary>
+            Reset's the control, placing it in a state where it could be re-inited
+            </summary>
+        </member>
+        <member name="M:Openfin.WinForm.EmbeddedView.windowConnectedPoll">
+            <summary>
+            This will poll the IsConnected variable to determine if the window should be embedded or not
+            </summary>
+        </member>
+        <member name="M:Openfin.WinForm.EmbeddedView.WndProc(System.Windows.Forms.Message@)">
+            <summary>
+            Override the WndProc speccifically to check if we received WM_DESTROY messages
+            </summary>
+            <param name="m"></param>
+        </member>
+        <member name="M:Openfin.WinForm.EmbeddedView.OnPaint(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            Override the OnPaint specifically to check if we have been destroyed and need to be re-created
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Openfin.WinForm.EmbeddedView.OpenfinWindow_Connected(System.Object,System.EventArgs)">
+            <summary>
+            The Openfin window has connected
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Openfin.WinForm.EmbeddedView.EmbeddedView_ParentChanged(System.Object,System.EventArgs)">
+            <summary>
+            The Parent form has changed
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Openfin.WinForm.EmbeddedView.ParentForm_FormClosed(System.Object,System.Windows.Forms.FormClosedEventArgs)">
+            <summary>
+            Parent form closed
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Openfin.WinForm.EmbeddedView.Close_Requested(Openfin.Desktop.Ack)">
+            <summary>
+            A OpenFin close event has been raised for the embedded window
+            </summary>
+            <param name="ack"></param>
+        </member>
+        <member name="M:Openfin.WinForm.EmbeddedView.Navigation_Rejected(Openfin.Desktop.Ack)">
+            <summary>
+            A Navigation Rejected event has been raised for the embedded window
+            </summary>
+            <param name="ack"></param>
+        </member>
+        <member name="M:Openfin.WinForm.EmbeddedView.EmbeddedView_SizeChanged(System.Object,System.EventArgs)">
+            <summary>
+            The Embedded control has changed in size
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Openfin.WinForm.EmbeddedView.OpenFinEmbeddedView_VisibleChanged(System.Object,System.EventArgs)">
+            <summary>
+            The Embedded control visibility has changed
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Openfin.WinForm.EmbeddedView.Form_LocationChanged(System.Object,System.EventArgs)">
+            <summary>
+            Form location changed, we will calibrate the embedded window
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Openfin.WinForm.EmbeddedView.EmbeddedView_HandleCreated(System.Object,System.EventArgs)">
+            <summary>
+            The Embedded control has been created
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Openfin.WinForm.EmbeddedView.MoveTimer_Elapsed(System.Object,System.Timers.ElapsedEventArgs)">
+            <summary>
+            We finish re-calibrating once the window has finished moving.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:Openfin.WinForm.Utils">
+            <summary>
+            OpenFin Winform Utilities.
+            </summary>
+        </member>
+        <member name="M:Openfin.WinForm.Utils.InvokeOnUiThreadIfRequired(System.Windows.Forms.Control,System.Action)">
+            <summary>
+            Will Invoke the action on the UI thread.
+            </summary>
+            <param name="control">A Control </param>
+            <param name="action">Action to invoke on the UI thread</param>
+        </member>
+    </members>
+</doc>
